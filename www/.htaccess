@@ -1,0 +1,11 @@
+Options +FollowSymlinks
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ %{REQUEST_URI}/../index.php?url=$1 [QSA,PT,L]
+
+#RewriteRule ^(.*)$ index.php [PT]
+#RewriteRule ^rest/([\w\d~%.:/-]+)$ info.php?params=$1&v=t [L,QSA]
